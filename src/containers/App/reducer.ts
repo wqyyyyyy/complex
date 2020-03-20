@@ -5,7 +5,7 @@ const initialState:Iapp = {
   age: 0
 }
 
-const appReducer = (state=initialState, action:appActions) => {
+const appReducer = (state=initialState, action:appActions) => (
     produce(state, draft => {
       switch(action.type) {
         case UPDATE_AGE:
@@ -16,6 +16,6 @@ const appReducer = (state=initialState, action:appActions) => {
           break;
       }
     })
-}
+)
 
 export default appReducer;
