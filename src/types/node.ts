@@ -4,6 +4,7 @@ export interface Idependences {
 
 export interface Inode {
   _id: string;
+  title: string;
   vision?: string;
   label: string;
   description: string;

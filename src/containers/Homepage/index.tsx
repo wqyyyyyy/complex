@@ -1,8 +1,9 @@
 import React from 'react';
+import Body from '../../components/HomeMain';
 
 const index = () => {
   return (
-    <div></div>
+    <Body></Body>
   )
 }
 
