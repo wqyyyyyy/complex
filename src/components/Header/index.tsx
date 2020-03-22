@@ -3,11 +3,12 @@ import {AppBar, Toolbar, IconButton, Typography, Button} from  '@material-ui/cor
 import {makeStyles} from '@material-ui/core/styles';
 import {SmallButton} from '../customUI/Buttons';
 import SmallToolbar from '../customUI/Toolbar';
+import {ui} from '../../config/uiconfig';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: "1.7rem",
-    lineHeight: "1.7rem",
+    height: ui.headerHeight,
+    lineHeight: ui.headerHeight,
     boxShadow: "0 0 0",
     borderBottom: "1px solid " + theme.palette.primary.dark
   },

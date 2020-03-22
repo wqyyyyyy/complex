@@ -1,42 +1,62 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Resizable} from 're-resizable';
 import {makeStyles} from '@material-ui/core/styles';
-import GridLayout from 'react-grid-layout';
+import G6 from '../G6';
+import Content from '../Content';
+import {ui} from '../../config/uiconfig';
 
 const useStyles = makeStyles(theme => ({
   root: {
     position: "absolute",
-    top: "1.7rem",
     left: 0,
+    top: ui.headerHeight,
     right: 0,
     bottom: 0,
     display: "flex",
     flexDirection: "row",
-  },
-  resizer: {
-    width: ".3rem",
-    height: "100%",
-    backgroundColor: theme.palette.primary.dark
+    overflow: "hidden",
+    "& > *": {
+      height: "100%"
+    }
   },
   left: {
-    width: "50%"
+    position: 'relative',
+    width: "30%",
+    minWidth: "5%",
+    maxWidth: `${ui.g6width}px`
+  },
+  right: {
+    position: "relative",
+    width: "70%",
+    minWidth: "30%",
+    flexGrow: 1
+  },
+  resizebar: {
+    position: "absolute",
+    right: "-.1rem",
+    height: "100%",
+    width: ".5rem",
+    // zIndex: 1000,
+    backgroundColor: theme.palette.primary.dark
   }
-}));
+}))
 
-const layout = [
-  {i: 'a', x: 0, y: 2, w: 1, h: 2},
-  {i: 'b', x: 0, y: 2, w: 1, h: 2}
-]
-
-const Index = () => {
+const Resize = () => {
   const classes = useStyles();
+  const [width, setWidth] = useState("50%");
   return (
     <div className={classes.root}>
-      <GridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1200}>
-        <div key="a">a</div>
-        <div key="b">b</div>
-      </GridLayout>
+      <Resizable 
+        className={classes.left} 
+      >
+        <G6/>
+        <div className={classes.resizebar}/>
+      </Resizable>
+      <div className={classes.right}>
+        <Content/>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Index;
+export default Resize;

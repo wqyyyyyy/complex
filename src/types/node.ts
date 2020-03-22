@@ -18,6 +18,7 @@ export interface Inode {
  */
 export interface Icontent {
   _id: string;
+  title: string;
   demind: string;
   skill: string;
   practices: string;
