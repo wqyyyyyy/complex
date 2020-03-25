@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import configStore from './configStore';
 import {ThemeProvider} from '@material-ui/core/styles';
 import theme from './configTheme';
+import 'typeface-roboto';
 
 const initialState = {};
 const store = configStore(initialState);

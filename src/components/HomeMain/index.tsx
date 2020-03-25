@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Resizable} from 're-resizable';
 import {makeStyles} from '@material-ui/core/styles';
-import G6 from '../G6';
+import Diagram from '../Diagram';
 import Content from '../Content';
 import {ui} from '../../config/uiconfig';
 
@@ -49,7 +49,7 @@ const Resize = () => {
       <Resizable 
         className={classes.left} 
       >
-        <G6/>
+        <Diagram/>
         <div className={classes.resizebar}/>
       </Resizable>
       <div className={classes.right}>

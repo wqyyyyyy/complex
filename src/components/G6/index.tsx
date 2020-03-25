@@ -18,9 +18,10 @@ const G6component = () => {
     const graph = new G6.Graph({
       container: "gmout",
       layout: {
-        type: "force",
-        preventOverlap: true,
-        linkDistance: 200
+        type: 'force',
+        linkDistance: 200,      // 可选，迭代次数
+        workerEnabled: true,       // 可选，开启 web-worker  }
+        preventOverlap: true
       },
       modes: {
         default: ["drag-canvas", "zoom-canvas", "drag-node"]
